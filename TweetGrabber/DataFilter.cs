@@ -20,20 +20,12 @@ namespace TweetGrabber
         {
 
             List<TweetDict> response = RecTweetGrabber(start_date, end_date);
-
-
-            //Console.WriteLine(response.Count);
-
-            //Directory.CreateDirectory(Path.GetDirectoryName(Path.Combine(Directory.GetCurrentDirectory(), "\\" + "temp.csv")));
-            //File.AppendAllText("temp.csv", response.ToString);
-
             
             string temp_name = String.Format("Solution for start_date[{0}] end_date[{1}].json", start_date.ToString("yyyy-MM-dd"), end_date.ToString("yyyy-MM-dd"));
-            //string temp_name = "Solution.csv";
-            Debug.WriteLine(String.Format("Creating file with name:[{0}]", temp_name));
+              Debug.WriteLine(String.Format("Creating file with name:[{0}]", temp_name));
             foreach (TweetDict some_dict in response)
             {
-                DictToCsv(some_dict, temp_name);
+                DictToJSON(some_dict, temp_name);
             }
 
             // Output to a CSV file possibly?
@@ -54,17 +46,14 @@ namespace TweetGrabber
         }
 
         //Function to write out data to CSV file
-        public static void DictToCsv(TweetDict dict, string filePath)
+        public static void DictToJSON(TweetDict dict, string filePath)
         {
             try
             {
-                /*
-                var csvLines = String.Join(Environment.NewLine,
-                       dict.Select(d => d.Key + "," + d.Value));*/
-                var csvLines = String.Format("{{\"id\": \"{0}\",\n\"stamp\": \"{1}\",\n\"text\": \"{2}\"}},\n\n\n", dict.id, dict.stamp, dict.text);
+                var jsonLines = String.Format("{{\"id\": \"{0}\",\n\"stamp\": \"{1}\",\n\"text\": \"{2}\"}},\n\n\n", dict.id, dict.stamp, dict.text);
     
                 Directory.CreateDirectory(Path.GetDirectoryName(Path.Combine(Directory.GetCurrentDirectory(), "\\" + filePath)));
-                File.AppendAllText(filePath, csvLines);
+                File.AppendAllText(filePath, jsonLines);
             }
             catch (Exception ex)
             {
@@ -84,8 +73,7 @@ namespace TweetGrabber
             string response = url_grabber.GET(String.Format(base_url, s_date, e_date));
 
 
-            //Convert response into a List<String> object
-            //List<Dictionary<string, string>> response_list = new JavaScriptSerializer().Deserialize<List<Dictionary<string, string>>>(response);
+            //Convert response into a List<TweetDict> object
             var response_list = new JavaScriptSerializer().Deserialize<List<TweetDict>>(response);
 
 
