@@ -1,0 +1,7 @@
+C:\Users\doogi\source\repos\TweetGrabber\TweetGrabber\bin\Debug\TweetGrabber.exe.config
+C:\Users\doogi\source\repos\TweetGrabber\TweetGrabber\bin\Debug\TweetGrabber.exe
+C:\Users\doogi\source\repos\TweetGrabber\TweetGrabber\bin\Debug\TweetGrabber.pdb
+C:\Users\doogi\source\repos\TweetGrabber\TweetGrabber\obj\Debug\TweetGrabber.csprojAssemblyReference.cache
+C:\Users\doogi\source\repos\TweetGrabber\TweetGrabber\obj\Debug\TweetGrabber.csproj.CoreCompileInputs.cache
+C:\Users\doogi\source\repos\TweetGrabber\TweetGrabber\obj\Debug\TweetGrabber.exe
+C:\Users\doogi\source\repos\TweetGrabber\TweetGrabber\obj\Debug\TweetGrabber.pdb
