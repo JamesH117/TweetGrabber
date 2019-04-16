@@ -7,6 +7,6 @@ Run .exe file inside \bin\debug or \bin\Release.
 
 Date range is hard coded in for assessment.
 
-Console window will close when scrapper is complete.
+Console window will close when scraper is complete.
 
-File inside directory will be created to show tweets scrapped.
+File inside directory will be created to show tweets scraped.
